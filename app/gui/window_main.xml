@@ -1,0 +1,68 @@
+<tkwidget>
+<tkmenu>
+		<menu label="_File">
+			<command label="New Scene" command="@cmd_new_scene"/>
+			<separator/>
+			<command label="Load Scene" command="@load_scene" state="disabled"/>
+			<command label="Save Scene" command="@save_scene" state="disabled"/>
+			<command label="Save Scene as..." command="@save_scene_as" state="disabled"/>
+			<separator/>
+			<command label="Quit" command="@quit" accelerator="Ctrl+Q"/>
+		</menu>
+		<menu label="_View">
+            <checkbutton label="Show statusbar" command="@ToggleStatusbar" variable="show_statusbar" />
+		</menu>
+		<menu label="_Scene">
+			<command label="Add Model" command="@model_add"/>
+			<command label="Delete Model" command="@model_del" state="disabled"/>
+		</menu>
+		<menu label="_Model">
+			<command label="Increase Size" state="disabled"/>
+			<command label="Decrease Size" state="disabled"/>
+			<command label="Default Size" state="disabled"/>
+			<separator/>
+			<command label="Add Vertex" state="disabled"/>
+			<command label="Edit Vertex" state="disabled"/>
+			<command label="Delete Vertex" state="disabled"/>
+			<separator/>
+			<command label="Add Face" state="disabled"/>
+			<command label="Edit Face" state="disabled"/>
+			<command label="Delete Face" state="disabled"/>
+		</menu>
+		<menu label="_About">
+			
+		</menu>
+	</tkmenu>
+	<frame layout="place" layout_options="x=0, y=0, width=100, relheight=1">
+		<!-- TODO: ADD THESE BUTTONS TO EXTERNAL XML FILE -->
+		<!-- SCALING MODEL -->
+		<label layout="pack" layout_options="fill='x'" text="Scale:"/>
+		<button layout="pack" layout_options="fill='x'" text="Scale +" command="@model_scale_up"/>
+		<button layout="pack" layout_options="fill='x'" text="Scale -" command="@model_scale_down"/>
+		<!-- MOVING MODEL -->
+		<label layout="pack" layout_options="fill='x'" text="Move:"/>
+		<button layout="pack" layout_options="fill='x'" text="Move Up" command="@model_move_up"/>		
+		<button layout="pack" layout_options="fill='x'" text="Move Down" command="@model_move_down"/>
+		<button layout="pack" layout_options="fill='x'" text="Move Left" command="@model_move_left"/>
+		<button layout="pack" layout_options="fill='x'" text="Move Right" command="@model_move_right"/>
+		<!-- ROTATE MODEL -->
+		<label layout="pack" layout_options="fill='x'" text="Rotate: "/>
+		<button layout="pack" layout_options="fill='x'" text="Rotate X" command="@model_rotate_x"/>
+		<button layout="pack" layout_options="fill='x'" text="Rotate Y" command="@model_rotate_y"/>
+		<button layout="pack" layout_options="fill='x'" text="Rotate Z" command="@model_rotate_z"/>
+		<!-- OTHERS -->
+		<label layout="pack" layout_options="fill='x'" text="Others: "/>
+		<button layout="pack" layout_options="fill='x'" text="Wireframe" command="@model_texture_toggle"/>
+
+
+		<!-- <button layout="place" text="-"  layout_options="relwidth=0.5, y=0           " command="@model_scale_down"/>
+		<button layout="place" text="+"  layout_options="relwidth=0.5, y=0,  relx=0.5" command="@model_scale_up"/>
+		<button layout="place" text="X-" layout_options="relwidth=0.5, y=30          " command="@model_rotate_xd"/>
+		<button layout="place" text="X+" layout_options="relwidth=0.5, y=30, relx=0.5" command="@model_rotate_xu"/>
+		<button layout="place" text="Y-" layout_options="relwidth=0.5, y=60          " command="@model_rotate_yd"/>
+		<button layout="place" text="Y+" layout_options="relwidth=0.5, y=60, relx=0.5" command="@model_rotate_yu"/>
+		<button layout="place" text="Z-" layout_options="relwidth=0.5, y=90          " command="@model_rotate_zd"/>
+		<button layout="place" text="Z+" layout_options="relwidth=0.5, y=90, relx=0.5" command="@model_rotate_zu"/> -->
+	</frame>
+	<canvas name="canvas" layout="place" bg="white" layout_options="x=100, y=0, relwidth=1, relheight=1"/>
+</tkwidget>

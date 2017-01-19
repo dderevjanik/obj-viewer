@@ -1,0 +1,17 @@
+# Cache
+__pycache__/
+source/__pycache__
+*.bak
+*.zip
+
+# Builded Markdown files
+latex/
+html/
+*.html
+
+# Compiled
+**/build
+**/builds
+**/release
+**/releases
+**/bin
